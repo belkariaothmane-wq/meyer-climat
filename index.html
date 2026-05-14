@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meyer'Climat — Installateur RGE Montauban 82</title>
+<meta name="description" content="Installation, entretien et dépannage de climatisation, pompes à chaleur et chauffe-eau thermodynamique en Tarn-et-Garonne. Certifié RGE QualiPAC. Devis gratuit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #1a2e45;
+    --navy-light: #243b55;
+    --glacier: #5bb8d4;
+    --glacier-light: #8ed0e4;
+    --glacier-pale: #e8f6fb;
+    --orange: #f07d2e;
+    --orange-light: #f5a05a;
+    --white: #ffffff;
+    --gray: #f4f7fa;
+    --text: #1a2e45;
+    --text-light: #4a6070;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(13, 27, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(91, 184, 212, 0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--glacier); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--glacier); }
+
+  .nav-cta {
+    background: var(--orange);
+    color: var(--white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--orange-light) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(91,184,212,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(240,125,46,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(91,184,212,0.15);
+    border: 1px solid rgba(91,184,212,0.3);
+    color: var(--glacier);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--glacier);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--glacier);
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--orange-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(240,125,46,0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--glacier);
+    color: var(--glacier);
+  }
+
+  /* Hero cards */
+  .hero-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .hero-card:hover {
+    background: rgba(91,184,212,0.1);
+    border-color: rgba(91,184,212,0.3);
+    transform: translateY(-3px);
+  }
+
+  .hero-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .hero-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-card p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--glacier);
+    padding: 2rem;
+  }
+
+  .stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .stat-item {
+    padding: 1rem;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--navy);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+    color: rgba(13,27,42,0.7);
+    font-weight: 400;
+    margin-top: 0.2rem;
+    display: block;
+  }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--glacier);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 580px;
+    font-weight: 300;
+  }
+
+  /* SERVICES */
+  .services { background: var(--gray); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 2rem;
+    border: 1px solid #e8eef4;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--glacier);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-card:hover {
+    border-color: var(--glacier-light);
+    box-shadow: 0 12px 40px rgba(91,184,212,0.12);
+    transform: translateY(-4px);
+  }
+
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .service-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .service-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--glacier);
+    background: var(--glacier-pale);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+  }
+
+  /* REALISATIONS */
+  .realisations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .realisation-card {
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--navy);
+    position: relative;
+    height: 260px;
+    cursor: pointer;
+  }
+
+  .realisation-card .card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s;
+    opacity: 0.5;
+  }
+
+  .realisation-card:hover .card-bg { transform: scale(1.05); }
+
+  .realisation-card .card-content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(13,27,42,0.95) 0%, transparent 100%);
+  }
+
+  .realisation-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .realisation-card p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: var(--glacier);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ZONE */
+  .zone { background: var(--navy); }
+
+  .zone .section-title { color: var(--white); }
+  .zone .section-sub { color: rgba(255,255,255,0.55); }
+  .zone .section-tag { color: var(--glacier); }
+
+  .zone-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 2.5rem;
+  }
+
+  .zone-chip {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.8);
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+
+  .zone-chip:hover {
+    background: rgba(91,184,212,0.15);
+    border-color: var(--glacier);
+    color: var(--glacier);
+  }
+
+  .zone-note {
+    margin-top: 2rem;
+    color: rgba(255,255,255,0.45);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+
+  /* AIDES */
+  .aides { background: var(--gray); }
+
+  .aides-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .aide-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.75rem 1.5rem;
+    border: 1px solid #e8eef4;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .aide-card:hover {
+    border-color: var(--glacier);
+    box-shadow: 0 8px 30px rgba(91,184,212,0.1);
+    transform: translateY(-3px);
+  }
+
+  .aide-icon { font-size: 1.75rem; margin-bottom: 0.75rem; display: block; }
+
+  .aide-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .aide-amount {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--orange);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .aide-card p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* ENGAGEMENTS */
+  .engagements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .engagement-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e8eef4;
+    transition: all 0.3s;
+  }
+
+  .engagement-item:hover {
+    border-color: var(--glacier-light);
+    background: var(--glacier-pale);
+  }
+
+  .engagement-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .engagement-item h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
+
+  .engagement-item p {
+    font-size: 0.83rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .cta-banner h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-banner p {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  .cta-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-phone {
+    background: var(--glacier);
+    color: var(--navy);
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+
+  .btn-phone:hover {
+    background: var(--glacier-light);
+    transform: translateY(-1px);
+  }
+
+  /* CONTACT */
+  .contact { background: var(--gray); }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .contact-item-icon {
+    width: 40px; height: 40px;
+    background: var(--glacier-pale);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-item-text strong {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-item-text a,
+  .contact-item-text span {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  .contact-item-text a:hover { color: var(--glacier); }
+
+  .certifs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .certif-badge {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+  }
+
+  /* FORM */
+  .contact-form {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid #e8eef4;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #dde4ec;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--white);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--glacier);
+    box-shadow: 0 0 0 3px rgba(91,184,212,0.1);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .form-submit:hover {
+    background: var(--orange-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(240,125,46,0.25);
+  }
+
+  .form-note {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.75rem;
+    text-align: center;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  footer p {
+    color: rgba(255,255,255,0.35);
+    font-size: 0.82rem;
+  }
+
+  footer span { color: var(--glacier); }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-cards { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .realisations-grid { grid-template-columns: 1fr 1fr; }
+    .aides-grid { grid-template-columns: 1fr 1fr; }
+    .engagements-grid { grid-template-columns: 1fr 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .contact-inner { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .realisations-grid { grid-template-columns: 1fr; }
+    .aides-grid { grid-template-columns: 1fr 1fr; }
+    .engagements-grid { grid-template-columns: 1fr; }
+    .hero-cards { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 3.5rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Meyer'<span>Climat</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#zone">Zone</a></li>
+    <li><a href="#aides">Aides</a></li>
+    <li><a href="#contact" class="nav-cta">Devis gratuit</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">Installateur certifié RGE · Montauban 82</div>
+      <h1>Le confort thermique,<br><em>toute l'année.</em></h1>
+      <p>Installation, entretien et dépannage de climatisation, pompes à chaleur et chauffe-eau thermodynamique en Tarn-et-Garonne. Intervention rapide, devis gratuit.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">📋 Obtenir un devis gratuit</a>
+        <a href="tel:0688700603" class="btn-secondary">📞 06 88 70 06 03</a>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <span class="hero-card-icon">❄️</span>
+        <h3>Climatisation</h3>
+        <p>Split, multi-split, gainable — résidentiel & pro</p>
+      </div>
+      <div class="hero-card">
+        <span class="hero-card-icon">🌿</span>
+        <h3>Pompe à chaleur</h3>
+        <p>Air/air et air/eau, économies jusqu'à 70%</p>
+      </div>
+      <div class="hero-card">
+        <span class="hero-card-icon">💧</span>
+        <h3>Chauffe-eau thermo.</h3>
+        <p>-70% sur votre consommation d'eau chaude</p>
+      </div>
+      <div class="hero-card">
+        <span class="hero-card-icon">⚡</span>
+        <h3>Dépannage urgent</h3>
+        <p>Intervention rapide, diagnostic précis</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">24h</span>
+      <span class="stat-label">Délai d'intervention</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Devis gratuit</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">RGE</span>
+      <span class="stat-label">Certifié QualiPAC</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">10 ans</span>
+      <span class="stat-label">Garantie décennale</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <span class="section-tag fade-in">Ce que nous faisons</span>
+    <h2 class="section-title fade-in">Nos prestations</h2>
+    <p class="section-sub fade-in">De l'installation à la maintenance, Meyer'Climat prend en charge tous vos besoins en Tarn-et-Garonne.</p>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <span class="service-icon">❄️</span>
+        <h3>Climatisation split murale</h3>
+        <p>Pose de splits, multi-splits et systèmes gainables pour particuliers et professionnels. Marques premium, installation soignée, garantie incluse.</p>
+        <span class="service-tag">Résidentiel & Pro</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🌿</span>
+        <h3>Pompe à chaleur</h3>
+        <p>PAC air/air et air/eau. Solution écologique avec des économies jusqu'à 70% sur le chauffage. Éligible MaPrimeRénov' et aides de l'État.</p>
+        <span class="service-tag">Aides disponibles</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">💧</span>
+        <h3>Chauffe-eau thermodynamique</h3>
+        <p>Installation de chauffe-eau thermodynamique pour réduire de 70% votre consommation d'eau chaude sanitaire.</p>
+        <span class="service-tag">Économique</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🔧</span>
+        <h3>Entretien & maintenance</h3>
+        <p>Contrats d'entretien annuels, nettoyage des filtres, contrôle des fluides frigorigènes et vérification des performances.</p>
+        <span class="service-tag">Contrat annuel</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">⚡</span>
+        <h3>Dépannage urgent</h3>
+        <p>Intervention rapide en cas de panne. Diagnostic précis, pièces d'origine, réparation dans les meilleurs délais.</p>
+        <span class="service-tag">Intervention rapide</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🏢</span>
+        <h3>Locaux professionnels</h3>
+        <p>Solutions adaptées aux commerces, bureaux et espaces industriels. Étude thermique et devis sur mesure.</p>
+        <span class="service-tag">Sur mesure</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REALISATIONS -->
+<section id="realisations">
+  <div class="section-inner">
+    <span class="section-tag fade-in">Nos réalisations</span>
+    <h2 class="section-title fade-in">Quelques installations récentes</h2>
+    <p class="section-sub fade-in">Découvrez nos derniers projets d'installation en Tarn-et-Garonne.</p>
+    <div class="realisations-grid">
+      <div class="realisation-card fade-in">
+        <div class="card-bg" style="background: linear-gradient(135deg, #1a3a5c 0%, #2d6a9f 100%);"></div>
+        <span class="card-badge">Résidentiel</span>
+        <div class="card-content">
+          <h3>Climatisation résidentielle</h3>
+          <p>Split mural — villa à Montauban</p>
+        </div>
+      </div>
+      <div class="realisation-card fade-in">
+        <div class="card-bg" style="background: linear-gradient(135deg, #1a4a3c 0%, #2d8a6f 100%);"></div>
+        <span class="card-badge">Pro</span>
+        <div class="card-content">
+          <h3>Locaux professionnels</h3>
+          <p>Système gainable — bureaux Castelsarrasin</p>
+        </div>
+      </div>
+      <div class="realisation-card fade-in">
+        <div class="card-bg" style="background: linear-gradient(135deg, #2a1a5c 0%, #5a2d9f 100%);"></div>
+        <span class="card-badge">PAC</span>
+        <div class="card-content">
+          <h3>Pompe à chaleur air/eau</h3>
+          <p>Maison neuve — Caussade</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE -->
+<section class="zone" id="zone">
+  <div class="section-inner">
+    <span class="section-tag fade-in">Zone d'intervention</span>
+    <h2 class="section-title fade-in">Tarn-et-Garonne et environs</h2>
+    <p class="section-sub fade-in">Basée à Montauban, Meyer'Climat intervient dans tout le département 82 et les zones limitrophes.</p>
+    <div class="zone-grid fade-in">
+      <span class="zone-chip">📍 Montauban</span>
+      <span class="zone-chip">Moissac</span>
+      <span class="zone-chip">Castelsarrasin</span>
+      <span class="zone-chip">Caussade</span>
+      <span class="zone-chip">Grisolles</span>
+      <span class="zone-chip">Verdun-sur-Garonne</span>
+      <span class="zone-chip">Labastide-St-Pierre</span>
+      <span class="zone-chip">Bressols</span>
+      <span class="zone-chip">Corbarieu</span>
+      <span class="zone-chip">Reyniès</span>
+      <span class="zone-chip">Montbartier</span>
+      <span class="zone-chip">Saint-Nauphary</span>
+      <span class="zone-chip">Et alentours…</span>
+    </div>
+    <p class="zone-note fade-in">Intervention dans tout le Tarn-et-Garonne (82) et les départements limitrophes. Déplacement gratuit pour l'établissement du devis.</p>
+  </div>
+</section>
+
+<!-- AIDES -->
+<section class="aides" id="aides">
+  <div class="section-inner">
+    <span class="section-tag fade-in">Financez votre projet</span>
+    <h2 class="section-title fade-in">Aides de l'État disponibles</h2>
+    <p class="section-sub fade-in">En tant qu'installateur certifié RGE QualiPAC, nous vous accompagnons dans toutes vos démarches pour obtenir les aides financières auxquelles vous avez droit.</p>
+    <div class="aides-grid">
+      <div class="aide-card fade-in">
+        <span class="aide-icon">🏦</span>
+        <h3>MaPrimeRénov'</h3>
+        <span class="aide-amount">Jusqu'à 4 000€</span>
+        <p>Aide directe de l'État pour l'installation d'une pompe à chaleur performante.</p>
+      </div>
+      <div class="aide-card fade-in">
+        <span class="aide-icon">⚡</span>
+        <h3>CEE – Coup de pouce</h3>
+        <span class="aide-amount">Variable</span>
+        <p>Certificats d'Économies d'Énergie selon les travaux réalisés et vos économies estimées.</p>
+      </div>
+      <div class="aide-card fade-in">
+        <span class="aide-icon">🏦</span>
+        <h3>Éco-PTZ</h3>
+        <span class="aide-amount">0% d'intérêt</span>
+        <p>Prêt à taux zéro jusqu'à 50 000€ pour financer vos travaux de rénovation énergétique.</p>
+      </div>
+      <div class="aide-card fade-in">
+        <span class="aide-icon">📋</span>
+        <h3>TVA réduite</h3>
+        <span class="aide-amount">5,5%</span>
+        <p>TVA réduite applicable sur les travaux d'amélioration de la performance énergétique.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section id="engagements">
+  <div class="section-inner">
+    <span class="section-tag fade-in">Nos engagements</span>
+    <h2 class="section-title fade-in">Pourquoi choisir Meyer'Climat ?</h2>
+    <div class="engagements-grid">
+      <div class="engagement-item fade-in">
+        <span class="engagement-icon">🏅</span>
+        <div>
+          <h3>Certifié RGE QualiPAC</h3>
+          <p>Travaux éligibles à toutes les aides de l'État. Qualification reconnue nationalement.</p>
+        </div>
+      </div>
+      <div class="engagement-item fade-in">
+        <span class="engagement-icon">📍</span>
+        <div>
+          <h3>Artisan local</h3>
+          <p>Basé à Montauban, nous connaissons le territoire et intervenons rapidement dans tout le 82.</p>
+        </div>
+      </div>
+      <div class="engagement-item fade-in">
+        <span class="engagement-icon">💬</span>
+        <div>
+          <h3>Devis gratuit</h3>
+          <p>Visite sur place, relevés et calculs de déperditions inclus. Réponse sous 24h.</p>
+        </div>
+      </div>
+      <div class="engagement-item fade-in">
+        <span class="engagement-icon">🛡️</span>
+        <div>
+          <h3>Garantie décennale</h3>
+          <p>Toutes nos installations sont couvertes par notre assurance garantie décennale.</p>
+        </div>
+      </div>
+      <div class="engagement-item fade-in">
+        <span class="engagement-icon">🔩</span>
+        <div>
+          <h3>Pièces d'origine</h3>
+          <p>Nous utilisons uniquement des matériaux et pièces de qualité professionnelle et d'origine.</p>
+        </div>
+      </div>
+      <div class="engagement-item fade-in">
+        <span class="engagement-icon">📅</span>
+        <div>
+          <h3>Disponible & réactif</h3>
+          <p>Du lundi au vendredi 8h–18h, samedi sur rendez-vous. Urgences prises en charge.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Prêt à améliorer votre confort ?</h2>
+  <p>Contactez-nous pour un devis gratuit et sans engagement. Réponse assurée sous 24h.</p>
+  <div class="cta-btns">
+    <a href="#contact" class="btn-primary">📋 Demander un devis</a>
+    <a href="tel:0688700603" class="btn-phone">📞 06 88 70 06 03</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <span class="section-tag">Nous contacter</span>
+        <h2>Parlons de votre projet</h2>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <strong>Adresse</strong>
+            <span>1743 Chemin de la Pouzaque<br>82000 Montauban</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <strong>Téléphone</strong>
+            <a href="tel:0688700603">06 88 70 06 03</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <a href="mailto:contact@meyerclimat.fr">contact@meyerclimat.fr</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-text">
+            <strong>Horaires</strong>
+            <span>Lun–Ven : 8h00–18h00<br>Samedi : sur rendez-vous</span>
+          </div>
+        </div>
+        <div class="certifs">
+          <span class="certif-badge">✓ RGE QualiPAC</span>
+          <span class="certif-badge">✓ Garantie décennale</span>
+          <span class="certif-badge">✓ Devis gratuit</span>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nom complet *</label>
+            <input type="text" placeholder="Jean Dupont">
+          </div>
+          <div class="form-group">
+            <label>Téléphone *</label>
+            <input type="tel" placeholder="06 xx xx xx xx">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="votre@email.fr">
+        </div>
+        <div class="form-group">
+          <label>Type de prestation</label>
+          <select>
+            <option value="">Sélectionner…</option>
+            <option>Climatisation</option>
+            <option>Pompe à chaleur</option>
+            <option>Chauffe-eau thermodynamique</option>
+            <option>Entretien / maintenance</option>
+            <option>Dépannage urgent</option>
+            <option>Locaux professionnels</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Votre message</label>
+          <textarea placeholder="Décrivez votre projet ou votre besoin…"></textarea>
+        </div>
+        <button class="form-submit" onclick="alert('Merci pour votre message ! Nous vous recontactons sous 24h.')">Envoyer ma demande →</button>
+        <p class="form-note">* Champs obligatoires · Réponse sous 24h · Devis sans engagement</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Meyer'Climat</span> — Installateur RGE QualiPAC · Montauban (82) · Tarn-et-Garonne</p>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Staggered grid children
+  document.querySelectorAll('.services-grid, .aides-grid, .engagements-grid, .realisations-grid').forEach(grid => {
+    grid.querySelectorAll('.fade-in').forEach((card, i) => {
+      card.style.transitionDelay = `${i * 80}ms`;
+    });
+  });
+</script>
+</body>
+</html>
